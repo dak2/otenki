@@ -12,3 +12,7 @@ gem "rubocop", "~> 1.21"
 gem "steep"
 
 gem "dotenv"
+
+gem "rbs"
+
+gem "rbs-inline"

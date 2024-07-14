@@ -1,0 +1,23 @@
+# Generated from lib/otenki/cli.rb with RBS::Inline
+
+module Otenki
+  class CLI < Thor
+    # @rbs override
+    # @rbs return: void
+    def self.desc: ...
+
+    # @rbs city_name: String
+    # @rbs return: void
+    def current_weather: (String city_name) -> void
+
+    # @rbs city_name: String
+    # @rbs days: String -- up_to: 3
+    # @rbs return: void
+    def forecast_weather: (String city_name, ?String days) -> void
+
+    # @rbs city_name: String
+    # @rbs days: String -- up_to: 7
+    # @rbs return: void
+    def past_weather: (String city_name, ?String days) -> void
+  end
+end

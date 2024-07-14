@@ -9,3 +9,4 @@
 Dockerfile
 .env
 /bundle-gems/
+/.gem_rbs_collection/

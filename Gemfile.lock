@@ -42,6 +42,7 @@ GEM
     parser (3.3.3.0)
       ast (~> 2.4.1)
       racc
+    prism (0.30.0)
     racc (1.8.0)
     rainbow (3.1.1)
     rake (13.2.1)
@@ -50,6 +51,9 @@ GEM
       ffi (~> 1.0)
     rbs (3.5.1)
       logger
+    rbs-inline (0.5.0)
+      prism (>= 0.29, < 0.31)
+      rbs (~> 3.5.0)
     regexp_parser (2.9.2)
     rexml (3.3.1)
       strscan
@@ -99,6 +103,8 @@ DEPENDENCIES
   dotenv
   otenki!
   rake (~> 13.0)
+  rbs
+  rbs-inline
   rubocop (~> 1.21)
   steep
 

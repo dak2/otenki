@@ -1,0 +1,7 @@
+# Generated from lib/otenki/constants.rb with RBS::Inline
+
+module Otenki
+  class Constants
+    WEATHER_URI: String
+  end
+end

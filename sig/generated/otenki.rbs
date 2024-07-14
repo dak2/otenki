@@ -4,7 +4,7 @@ module Otenki
   # @rbs error: Otenki::Error
   class Error < StandardError
     # @rbs msg: String
-    # @rbs return: void
-    def initialize: (?String msg) -> void
+    # @rbs return: Otenki::Error
+    def initialize: (?String msg) -> Otenki::Error
   end
 end

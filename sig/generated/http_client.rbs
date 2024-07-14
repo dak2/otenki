@@ -1,0 +1,21 @@
+# Generated from lib/http_client.rb with RBS::Inline
+
+class HttpClient
+  attr_reader base_path: untyped
+
+  attr_reader base_params: untyped
+
+  # @rbs base_path: String
+  # @rbs base_params: Hash[Symbol, String]
+  def initialize: (String base_path, Hash[Symbol, String] base_params) -> untyped
+
+  # @rbs params: Hash[Symbol, String]
+  # @rbs return: String
+  def get_response: (untyped path, Hash[Symbol, String] params) -> String
+
+  private
+
+  # @rbs params: Hash[Symbol, String]
+  # @rbs return: Hash[Symbol, String]
+  def request_params: (Hash[Symbol, String] params) -> Hash[Symbol, String]
+end

@@ -8,10 +8,9 @@ module Otenki
   # @rbs error: Otenki::Error
   class Error < StandardError
     # @rbs msg: String
-    # @rbs return: void
+    # @rbs return: Otenki::Error
     def initialize(msg = "Error occurred")
-      super(msg)
+      super
     end
   end
-  # Your code goes here...
 end

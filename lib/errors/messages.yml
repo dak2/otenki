@@ -2,3 +2,4 @@ otenki:
   errors:
     forecast_weather_up_to_3_days: "3日間までの天気予報しか取得できません。"
     fetch_weather_up_to_past_7_days: "過去7日間までの天気予報しか取得できません。"
+    must_be_positive_integer: "正の整数で入力してください。"

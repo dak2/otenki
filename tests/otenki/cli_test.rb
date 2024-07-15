@@ -37,6 +37,8 @@ class CLITest < Minitest::Test
       assert_match(expected_response, output)
     end
 
+    # validateのケース
+
     @http_client.verify
   end
 
@@ -52,6 +54,8 @@ class CLITest < Minitest::Test
         output = capture_io { @cli.past_weather("Tokyo", "1") }.first
         assert_match(expected_response, output)
       end
+
+      # validateのケース
 
       @http_client.verify
     end

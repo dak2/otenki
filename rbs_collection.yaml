@@ -21,3 +21,4 @@ gems:
   - name: yaml
   - name: thor
   - name: time
+  - name: json

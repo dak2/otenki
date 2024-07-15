@@ -6,6 +6,9 @@ require "thor"
 require "dotenv/load"
 require "date"
 require_relative "constants"
+require_relative "serializers/current_weather"
+require_relative "serializers/forecast_weather"
+require_relative "serializers/past_weather"
 require_relative "../http_client"
 
 module Otenki
@@ -15,7 +18,8 @@ module Otenki
     # @rbs city_name: String
     # @rbs return: void
     def current_weather(city_name)
-      puts http_client.get_response("current.json", { q: city_name })
+      res = http_client.get_response("current.json", { q: city_name })
+      puts Serializers::CurrentWeather.serialize(res)
     rescue StandardError => e
       puts "Error: #{e}"
     end
@@ -29,7 +33,8 @@ module Otenki
       input_days = days.to_i
       validate_days(input_days, type: :forecast)
 
-      puts http_client.get_response("forecast.json", { q: city_name, days: input_days })
+      res = http_client.get_response("forecast.json", { q: city_name, days: input_days })
+      puts Serializers::ForecastWeather.serialize(res, input_days - 1)
     rescue StandardError => e
       puts "Error: #{e}"
     end
@@ -44,7 +49,8 @@ module Otenki
       validate_days(input_days, type: :past)
       past_date = Date.today.prev_day(input_days)
 
-      puts http_client.get_response("history.json", { dt: past_date.to_s, q: city_name })
+      res = http_client.get_response("history.json", { dt: past_date.to_s, q: city_name })
+      puts Serializers::PastWeather.serialize(res)
     rescue StandardError => e
       puts "Error: #{e}"
     end
@@ -60,6 +66,8 @@ module Otenki
     # @rbs type: Symbol
     # @rbs return: void
     def validate_days(days, type:)
+      raise Otenki::Error, Constants::MUST_BE_POSITIVE_INTEGER if days <= 0
+
       case type
       when :forecast
         raise Otenki::Error, Constants::FORECAST_WEATHER_UP_TO_3_DAYS if days > 3

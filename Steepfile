@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 # D = Steep::Diagnostic
 #
 target :lib do
   signature "sig"
 
-  check "lib" # Directory name
+  check "lib"
   # check "Gemfile"                   # File name
   # check "app/models/**/*.rb"        # Glob
   # ignore "lib/templates/*.rb"
@@ -20,10 +22,10 @@ target :lib do
   # end
 end
 
-# target :test do
-#   signature "sig", "sig-private"
-#
-#   check "test"
-#
-#   # library "pathname"              # Standard libraries
-# end
+target :test do
+  signature "sig"
+
+  check "tests"
+
+  # library "pathname"              # Standard libraries
+end

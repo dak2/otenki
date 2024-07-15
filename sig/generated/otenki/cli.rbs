@@ -2,6 +2,10 @@
 
 module Otenki
   class CLI < Thor
+    # This method is defined in the thor gem
+    # @rbs return: void
+    def self.desc: (String, String) -> void
+
     # @rbs city_name: String
     # @rbs return: void
     def current_weather: (String city_name) -> void

@@ -16,3 +16,5 @@ gem "dotenv"
 gem "rbs"
 
 gem "rbs-inline"
+
+gem "minitest"

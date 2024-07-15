@@ -6,16 +6,16 @@ class HttpClient
   attr_reader base_params: untyped
 
   # @rbs base_path: String
-  # @rbs base_params: Hash[Symbol, String]
-  def initialize: (String base_path, Hash[Symbol, String] base_params) -> untyped
+  # @rbs base_params: Hash[Symbol, String | Integer | nil]
+  def initialize: (String base_path, Hash[Symbol, String | Integer | nil] base_params) -> untyped
 
-  # @rbs params: Hash[Symbol, String]
+  # @rbs params: Hash[Symbol, String | Integer | nil]
   # @rbs return: String
-  def get_response: (untyped path, Hash[Symbol, String] params) -> String
+  def get_response: (untyped path, Hash[Symbol, String | Integer | nil] params) -> String
 
   private
 
-  # @rbs params: Hash[Symbol, String]
-  # @rbs return: Hash[Symbol, String]
-  def request_params: (Hash[Symbol, String] params) -> Hash[Symbol, String]
+  # @rbs params: Hash[Symbol, String | Integer | nil]
+  # @rbs return: Hash[Symbol, String | Integer | nil]
+  def request_params: (Hash[Symbol, String | Integer | nil] params) -> Hash[Symbol, String | Integer | nil]
 end

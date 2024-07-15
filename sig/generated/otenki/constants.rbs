@@ -2,6 +2,7 @@
 
 module Otenki
   class Constants
+    # : String
     WEATHER_URI: String
 
     ERROR_MESSAGES: untyped

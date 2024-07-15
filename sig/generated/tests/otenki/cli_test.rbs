@@ -1,0 +1,15 @@
+# Generated from tests/otenki/cli_test.rb with RBS::Inline
+
+class CLITest < Minitest::Test
+  # @rbs return: void
+  def setup: () -> void
+
+  # @rbs return: void
+  def test_current_weather: () -> void
+
+  # @rbs return: void
+  def test_forecast_weather: () -> void
+
+  # @rbs return: void
+  def test_past_weather: () -> void
+end

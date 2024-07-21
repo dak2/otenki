@@ -26,6 +26,8 @@ module Otenki
     # @rbs return: void
     def validate_days: (Integer days, type: Symbol) -> void
 
-    def validate_city_name: (untyped city_name) -> untyped
+    # @rbs city_name: String
+    # @rbs return: void
+    def validate_city_name: (String city_name) -> void
   end
 end

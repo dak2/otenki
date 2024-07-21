@@ -79,6 +79,8 @@ module Otenki
       end
     end
 
+    # @rbs city_name: String
+    # @rbs return: void
     def validate_city_name(city_name)
       raise Otenki::Error, Constants::CITY_NAME_MUST_BE_STRING unless city_name.is_a?(String)
     end

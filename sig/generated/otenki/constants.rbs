@@ -12,5 +12,7 @@ module Otenki
     FETCH_WEATHER_UP_TO_PAST_7_DAYS: String
 
     MUST_BE_POSITIVE_INTEGER: String
+
+    CITY_NAME_MUST_BE_STRING: String
   end
 end

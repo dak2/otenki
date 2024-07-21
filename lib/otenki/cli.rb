@@ -18,6 +18,7 @@ module Otenki
     # @rbs city_name: String
     # @rbs return: void
     def current_weather(city_name)
+      validate_city_name(city_name)
       res = http_client.get_response("current.json", { q: city_name })
       puts Serializers::CurrentWeather.serialize(res)
     rescue StandardError => e
@@ -30,6 +31,7 @@ module Otenki
     # @rbs days: String -- up_to: 3
     # @rbs return: void
     def forecast_weather(city_name, days = "1")
+      validate_city_name(city_name)
       input_days = days.to_i
       validate_days(input_days, type: :forecast)
 
@@ -45,6 +47,7 @@ module Otenki
     # @rbs days: String -- up_to: 7
     # @rbs return: void
     def past_weather(city_name, days = "1")
+      validate_city_name(city_name)
       input_days = days.to_i
       validate_days(input_days, type: :past)
       past_date = Date.today.prev_day(input_days)
@@ -74,6 +77,10 @@ module Otenki
       when :past
         raise Otenki::Error, Constants::FETCH_WEATHER_UP_TO_PAST_7_DAYS if days > 7
       end
+    end
+
+    def validate_city_name(city_name)
+      raise Otenki::Error, Constants::CITY_NAME_MUST_BE_STRING unless city_name.is_a?(String)
     end
   end
 end

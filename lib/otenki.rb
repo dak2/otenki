@@ -5,7 +5,6 @@ require_relative "otenki/version"
 require "otenki/cli"
 
 module Otenki
-  # @rbs error: Otenki::Error
   class Error < StandardError
     # @rbs msg: String
     # @rbs return: Otenki::Error

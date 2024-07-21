@@ -1,7 +1,6 @@
 # Generated from lib/otenki.rb with RBS::Inline
 
 module Otenki
-  # @rbs error: Otenki::Error
   class Error < StandardError
     # @rbs msg: String
     # @rbs return: Otenki::Error

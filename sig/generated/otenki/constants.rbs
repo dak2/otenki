@@ -10,5 +10,7 @@ module Otenki
     FORECAST_WEATHER_UP_TO_3_DAYS: String
 
     FETCH_WEATHER_UP_TO_PAST_7_DAYS: String
+
+    MUST_BE_POSITIVE_INTEGER: String
   end
 end

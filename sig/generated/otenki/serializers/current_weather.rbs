@@ -1,0 +1,11 @@
+# Generated from lib/otenki/serializers/current_weather.rb with RBS::Inline
+
+module Otenki
+  module Serializers
+    class CurrentWeather
+      # @rbs response: String
+      # @rbs return: String
+      def self.serialize: (String response) -> String
+    end
+  end
+end

@@ -1,0 +1,13 @@
+# Generated from lib/otenki/serializers/past_weather.rb with RBS::Inline
+
+module Otenki
+  module Serializers
+    class PastWeather
+      # @rbs response: String
+      # @rbs index: Integer
+      # @rbs return: String
+      # rubocop:disable Metrics/AbcSize, Metrics/MethodLength,Lint/MissingCopEnableDirective
+      def self.serialize: (String response) -> String
+    end
+  end
+end

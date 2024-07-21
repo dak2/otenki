@@ -1,0 +1,5 @@
+class Thor
+  # This method is defined in the thor gem
+  # @rbs return: void
+  def self.desc: (String, String) -> void
+end
